@@ -31,9 +31,9 @@ def get_wildcard_dir() -> Path:
     wildcard_dir = getattr(opts, "wildcard_dir", None)
     from modules import shared
     import os
-    model_dir = os.path.join(shared.cmd_opts.data_oss, 'models')
+    model_dir = os.path.join(shared.cmd_opts.data_dir, 'models')
     if shared.cmd_opts.just_ui:
-        model_dir = os.path.join(os.path.dirname(shared.cmd_opts.data_oss), 'models')
+        model_dir = os.path.join(os.path.dirname(shared.cmd_opts.data_dir), 'models')
     if wildcard_dir is None:
         wildcard_dir = Path(model_dir) / "wildcards"
     wildcard_dir = Path(wildcard_dir)
